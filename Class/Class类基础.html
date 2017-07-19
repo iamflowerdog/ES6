@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MrYanG</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    //定义类
+    class Point {
+        constructor(x=0, y=0){
+            this.x = x;
+            this.y = y;
+        }
+        toString(){
+            return '('+ this.x + "," + this.y +')'
+        }
+    }
+
+    let p = new Point();
+
+    console.log(p); //Point {x: 0, y: 0}
+    console.log(p.toString()); //(0,0)
+
+    //类的数据类型就是函数，类本身就指向构造函数
+    console.log(typeof Point); //function
+    console.log(p instanceof Point); //true
+    console.log(Point.prototype.constructor === Point); //true
+    console.log(p.__proto__.constructor === Point); //true
+
+
+    //构造函数的prototype属性，在ES6中的类上面继续存在，
+    //事实上类的所有方法定义在prototype属性上面
+
+    class Name {
+        constructor(name, age){
+            this.name = name;
+            this.age = age;
+        }
+
+        sayName(){
+            console.log(this.name, this.age);
+        }
+    }
+
+    let invoker = new Name("invoker", 19);
+
+    console.log(invoker); //Name {name: "invoker", age: 19}
+
+    console.log(invoker.__proto__);// Object {constructor: function, sayName: function}
+
+    console.log(invoker.__proto__ === Name.prototype); //true
+
+    //因为实例的隐式原型指向类的显示原型，所以实例都可以用里面的方法
+    invoker.sayName();//invoker 19
+
+    //invoker是Name的实例，它的constructor方法，就是Name类原型的方法
+    console.log(invoker.constructor == Name.prototype.constructor);
+
+    console.log(Object.prototype.__proto__);
+
+
+</script>
+</body>
+</html>

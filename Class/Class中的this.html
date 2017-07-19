@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MrYanG</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    class Foo {
+        constructor(){
+            console.log(new.target.name);//new.target指向当前正在执行的函数
+        }
+
+    }
+
+    class Son extends Foo {
+        constructor(){
+            super();
+        }
+    }
+
+    new Foo(); //Foo
+    new Son(); //Son
+
+    //注意： super虽然代表父类Foo的构造函数，但是返回的是子类Son的实例
+    //即，super内部的this指向Son，因此super()在这里相当于Foo.prototype.constructor.call(this)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

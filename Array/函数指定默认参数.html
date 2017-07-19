@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MrYanG</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    //ES5中通过变通的方法为参数指定默认值
+
+    function point(x, y) {
+
+        if (typeof y === "undefined"){
+            y = "world";
+        }
+
+        console.log(x, y);
+    }
+
+    point("hello");//hello world
+    point("hello", "invoker");//hello invoker
+    point("hello", "");//hello
+
+    //ES6允许为函数的参数设置默认值，即直接写在参数定义的后面
+
+    function arrow(x, y = "world") {
+        console.log(x, y);
+    }
+    arrow("hello");//hello world
+    arrow("hello", "China");//hello China
+    arrow("hello", "");//hello
+    
+    function Origin(x=0, y=0) {
+        this.x = x;
+        this.y = y;
+    }
+
+    let o = new Origin();
+    console.log(o); //Origin {x: 0, y: 0}
+
+    let p = 100;
+
+    function sum(x = p++) {
+        return x;
+    }
+
+    console.log(sum());//100
+    console.log(sum());//101
+
+</script>
+</body>
+</html>

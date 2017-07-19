@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MrYanG</title>
+</head>
+<body>
+<script>
+
+    let arr = [1, 4, 2, 4, 3, 6, 3, 5, 6];
+
+    //原生js方法
+    
+    function unique(arr) {
+        let arr1 = [];
+        let obj = {};
+        for (let i=0; i<arr.length; i++){
+            //console.log(arr[i]);
+            //console.log(obj[arr[i]]);
+
+
+            if (!obj[arr[i]]){
+
+                arr1.push(arr[i]);
+                obj[arr[i]] = 1;
+
+            }
+        }
+        console.log(obj);
+        return arr1;
+    }
+
+    //console.log(unique(arr));
+    //unique(arr);
+
+    //往Array原型里面添加方法
+    Array.prototype.unique2 = function () {
+        let arr1 = [];
+        let obj = {};
+        for (let i=0; i<this.length; i++){
+            //console.log(arr[i]);
+            //console.log(obj[arr[i]]);
+            if (!obj[this[i]]){
+                obj[this[i]] = 1;
+                arr1.push(this[i]);
+            }
+        }
+
+        return arr1;
+    };
+
+    console.log(arr.unique2());
+
+</script>
+</body>
+</html>

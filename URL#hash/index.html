@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MrYanG</title>
+</head>
+<body>
+
+<a href="#test1" id="a1">hash test1</a>
+
+<a href="#test2" id="a2">hash test2</a>
+
+
+
+
+<a href="#" name="test1" style="position: absolute ; top: 300px">
+
+    hello world
+</a>
+
+
+
+<div id="test2" style="position: absolute ; top: 300px; right: 10px">
+    fuck react!
+</div>
+
+
+
+
+<script type="text/javascript">
+
+    let a1 = document.getElementById("a1");
+    let a2 = document.getElementById("a2");
+
+    a1.onclick = function () {
+        console.log(window.location.hash);
+    };
+
+    a2.onclick = function () {
+        console.log(window.location.hash);
+    };
+
+    //这是一个HTML 5新增的事件，当#值发生变化时，就会触发这个事件。
+    window.onhashchange = function (event) {
+        console.log(event);
+    }
+
+
+</script>
+</body>
+</html>

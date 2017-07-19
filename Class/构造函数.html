@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MrYanG</title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+    function Point(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    Point.prototype.toString = function () {
+        return '(' + this.x + ', ' + this.y + ')';
+    };
+
+    let p = new Point(3, 6);
+
+    console.log(Point);//----->构造函数本身
+
+    console.log(Point.prototype);//----->prototype原型对象，包含构造器
+    /*
+     Point.prototype----->原型对象，包含构造器constructor，自定义的toString
+     Object {toString: function, constructor: function}
+     toString:function ()
+     constructor:function Point(x, y)
+     __proto__:Object
+
+     */
+
+    console.log(Point.prototype.constructor);//------>Point函数本身
+    /*
+     Point.prototype.constructor ------>Point函数本身
+     function Point(x, y) {
+         this.x = x;
+         this.y = y;
+     }
+     */
+
+    console.log(p);//------>实例对象 Point {x: 3, y: 6}
+
+    /*
+     Point {x: 3, y: 6}
+
+     __proto__: Object -----> Point.prototype
+
+     */
+
+    console.log(p instanceof Point); //--->true
+
+    console.log(p.toString());//(3, 6)
+
+    console.log(p.__proto__);//__proto__: Object -----> Point.prototype
+
+    console.log(p.prototype);//undefined
+
+</script>
+</body>
+</html>

@@ -12,4 +12,5 @@
 * 项目总监：Boolean_YanG
 * 项目经理: Fei Bai
 * 项目负责人: 
-	* 四组成员
+	* All members
+	* Nice

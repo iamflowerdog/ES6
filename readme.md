@@ -2,7 +2,10 @@
 	* 测试ES6新功能Class类的用法
 	* 测试super用作函数和对象的区别
 	* 数组去重的方法
-	* Array新增map方法的测试
+	* Array的map方法的测试
+## 版本信息
+
+    * Array/ 新增map() filter() reduce()方法测试 ----2017年7月25日18:42:07
 
 ## 信息
 * 作者: Boolean_YanG

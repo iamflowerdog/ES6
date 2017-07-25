@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MrYanG</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    /*
+        forEach() 方法对数组的每个元素执行一次提供的函数。
+     */
+    function listArray(element, index) {
+        console.log("a[" + index + "] = " + element);
+    }
+
+    let el ;
+
+    let arr = ["sven", "juggernaut", "phantom assassin", "", el];
+
+    arr.forEach(listArray);
+
+    /*
+       控制台打印输出如下：
+
+         a[0] = sven
+         a[1] = juggernaut
+         a[2] = phantom assassin
+         a[3] =
+         a[4] = undefined
+     */
+
+    //从数组中的元素值，更新对象的属性，向对象中添加数组，计算数组的长度和总和
+    
+    function Counter() {
+        this.sum = 0;
+        this.count = 0;
+    }
+    
+    Counter.prototype.add = function (array) {
+        array.forEach(function (item) {
+            this.sum += item;
+            this.count ++;
+        }, this)
+    };
+
+    let obj = new Counter();
+
+    obj.add([1, 8, 9]);
+
+    console.log(obj.sum, obj.count);
+
+</script>
+</body>
+</html>

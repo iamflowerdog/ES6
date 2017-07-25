@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MrYanG</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    /*
+        - map()方法创建一个新数组，
+            其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。
+        - Array.prototype.map = function(callback,thisArg) {};
+
+        - map()方法里面可以传两个参数  callback,thisArg
+           - callback 回掉函数，里面可以传三个参数 item, index, arr
+                - item 数组中正在处理的当前元素。
+                - index 数组中正在处理的当前元素的索引。
+                - array  map 方法被调用的数组。
+           - thisArg
+                - [thisArg] 可选值，执行callback函数时，使用this的值
+                - 如果不传thisArg或者设置指定为null或者undefined 则this值为window
+                - 如果传 obj 则 this为obj ，但是记得不能用箭头函数
+
+             @param {function(T=, number=, Array.<T>=)} callback
+             @param {*} [thisArg]
+             @return {boolean}
+
+     */
+
+
+    let obj = {name: "invoker"};
+
+    const arr = [3, 5, 2, 1, 6];
+
+
+    let newArr = arr.map((item, index, arr) => {
+
+        console.log(item, index, arr); // Window{}
+
+        console.log(this);
+
+        return item * 2;
+
+    }, null);
+
+
+    console.log(newArr); //(5) [6, 10, 4, 2, 12]
+
+
+    //指定map()的this
+
+    let thisArr = arr.map(function (item, index, arr) {
+
+        console.log(item, index, arr); //
+
+        console.log(this); //Object {name: "invoker"}
+
+    }, obj);
+
+
+
+
+
+
+</script>
+</body>
+</html>

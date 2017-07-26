@@ -1,5 +1,7 @@
 
-![](http://i.imgur.com/KzGAHLE.png)
+<div  align="center">    
+<img src="http://i.imgur.com/KzGAHLE.png" width = "300" height = "200" alt="haha" align=center />
+</div>
 
 ## 功能
 	* 测试ES6新功能Class类的用法

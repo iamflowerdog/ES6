@@ -1,3 +1,6 @@
+
+![](http://i.imgur.com/KzGAHLE.png)
+
 ## 功能
 	* 测试ES6新功能Class类的用法
 	* 测试super用作函数和对象的区别
